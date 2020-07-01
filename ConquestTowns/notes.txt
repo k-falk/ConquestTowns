@@ -1,0 +1,36 @@
+http://pastebin.com/fXDEYkka
+
+Actual Town commands:
+
+/town create: Checks if the owner of the settlement has the required amount of players in his settlement, and if he has the correct currency needed to make a town. If you do, it creates the town in a radius around where you are standing. This should also check for other towns within a 300 block radius, if it finds one it will not allow you to create the town.
+/town create rewards: places a rewards chest where you are standing. The rewards chest is only accessible by your town members, unless an enemy team is in war with you, then they can access it. THE REWARDS CHEST CAN ONLY BE IN A 10 BLOCK RADIUS FROM THE CENTER OF YOUR TOWN.
+/town invite <player>: adds them to regions
+/town kick <player>: kicks them from regions
+/town destroy: THIS SHOULD HAVE A ARE YOU SURE YOU WANT TO DESTROY THIS TOWN MESSAGE
+/town upgrade: checks your inventory or rewards chest for the upgrade items, if they are there it upgrades town to the next tier. Should prompt and ask if you want to use items from rewards chest or inventory. Remember these items have to be the custom rares with those certain names.
+/town list: Lists all towns
+/town members <townnane>: shows a list of town members and what rank they are.
+/town ranks: lists all ranks of towns
+/town upgrades <specific town rank>: checks what special items are needed to upgrade to that rank. SHOW THEM ALL, not just the ones your town in specific needs.
+/town war <townname>: Launches a war, display in global chat.
+/town who <ign>: when used on person, it tells you what town or settlement they are in, the rank of the town, and player rank in that town. Actual message should be "<player> is in the <townrank> of <townname> as a <playerrankintown>
+/town info <townname>: Shows coords to town, as well as a list of members and the rank of the town.
+/town broadcast <message>: broadcasts a message to your entire town. All players can use this.
+
+
+Permission Commands
+/town permissions - show's a list of permission flags and settings
+/town permissions set <flag> <setting>
+
+
+Admin Commands (ALL HAVE PERMISSION NODES):  Admins have permissions to ALL towns
+/town admin destroy <town>
+/town admin create: creates a town with no cost.
+/town admin upgrade: Upgrades a town to next rank with no cost
+/town admin owner <townname> <ign>: allows you to manually change the owner of a town to a different player. Works on settlements as well.
+/town admin invite <townname> <ign>: force invites a player to a town. Works on settlements as well.
+/town admin kick <townname> <ign>: force kicks a player from a town. Works on settlements as well.
+/town admin create rewards: force creates a rewards chest where you are standing.
+/town admin broadcast <townname>: force broadcasts a message to a certain town.
+/town admin war <townname1> <townname2>: forces two towns to go into war.
+/town admin peace <townname1> <townname2>: forces two towns into peace

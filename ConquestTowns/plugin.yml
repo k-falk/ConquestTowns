@@ -1,0 +1,9 @@
+author: Falker
+version: 1.0.0
+name: ConquestTowns
+main: com.kfalk.conquesttowns.ConquestTowns
+softdepend: [TagAPI]
+commands:
+  settlement:
+  town:
+  towna:

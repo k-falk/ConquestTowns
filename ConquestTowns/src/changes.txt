@@ -1,0 +1,66 @@
+API + Guidance
+
+Changelog:
+----------
+1) Placing town chests now works with the new display name format <town> Vault.
+2) Updated town broadcast message to format)  <Town> | <Player> // <msg>. If it's an announcment format will be  <Town> //.
+3) Fixed admin commands not working.
+4) Fixed console error when running /town upgrades <RANK> with an invalid rank string.
+5) '/town upgrades <RANK>' now shows the quantity of required materials correctly.
+6) Fixed a bug where towns could wage war on themselves
+7) Formatted town rank string to only capitalise the first letter (neater formatting)
+8) Town chest is correctly removed from a players inventory when they create a town
+9) Changed border material to stone and add command for the owner to control it '/town border true/false'
+10) Added pagination for help commands
+11) Fixed a bug where towns would be active in a larger region even if they hadn't reached that rank yet, now this is fixed these 'unactivated' regions can
+still be used/built upon by players as normal but no town chests can be placed in this area.
+12) Fixed entry/exit message, this bug fix also follows directly from #11
+13) Fixed a bug where players could accept an invite to another town/settlement without first leaving their town/settlement
+
+FINAL note - I'd advise that we get the whole plugin working first, mainly the core functionality, then once we've tested and determined that war is working
+as we want then we can look into player rewards and I can give you information on the API. The whole chest rewards and War still needs testing to ensure it's
+ robust.
+
+----------------------------------------------------------------------------------
+
+Changelog:
+----------
+1) Settlement joining not working -> I forgot to add the command (/settlement join <name>), all done now should be able to accept settlement invites
+    1.b) Add command to leave settlement for players -> /settlement leave
+    1.c) Success message now shown when sending an invitation
+
+2) When you place the Create A Town chest it should change the name from Create A Town to like "<Town Name> Vault" -> DONE
+3) Command asthetics, command system is not setup to handle that, would require a whole overhaul and a lot of additional work.
+4) Town broadcast now has prefix of the town's name before any message
+5) Are there admin commands? -> YES! (/towna) - see console for permissions, they get printed out upon startup
+6) Interact permissions is now locked to ALL and cannot be changed
+7) War initiation message is now global.
+    7.b) Players are sent a message notifying them they are at war (if applicable) when they log on
+8) When you create a town, it moves all your settlement members to the new town and removes the old settlement
+9) War is over message is displayed globally, and should only show up once now.
+10) Yes the town region only considers X and Z coordinates so is independant of height.
+11) I'm not going to code the plugin to handle reloads, if you know what's good for you, you won't be doing that anyway :)
+12) I don't think there is currently a difference between Default and Member so that's buggy. Can you clarify what's wrong? Default is meant to be for all
+players not in the town, and members for all members. For instance you may want to allow members to build in your town, but not players who don't belong to
+your town.
+13) The region seems to be extending out around 200 blocks from where the radius ends of the actual town -> Yes, that is a preventive measure so other towns
+can't be create which may overlap with your future upgrade space. So when the plugin calculates permissible distances between towns it checks the range is
+greater than the MAX_SIZE + REGION_SPACING.
+14) Permissions clarification -> All is basically EVERYONE, so everyone can do that action, members or not. Member is, well a town member. In the permissions
+ system players can only perform actions if they have equal or greater than permission. For example if you have build set to Member, then non-members cannot
+ build, but members, managers and owners can.
+15) The obsidian border was more just a visual thing for me for testing, I can add commands to allow the owner to raise/lower the border if you'd like me to?
+16) Players cannot manually place items in their vault so they won't be able to 'block it up'.
+17) Entry/Exit messages are now shown to players when entering or leaving a town.
+18) Added a configuration option to prevent players building in a certain radius from a town chest.
+19) Town members are notified when a member from the town they are at war with enters their town.
+20) Fixed error when executing "/town list" if there are no towns.
+21) For "/town upgrade" if you don't have the required resources it tells you what you need, for "/town upgrades <RANK>" it tells you what resources are
+needed to upgrade to that rank of town.
+
+
+Questions:
+----------
+1) Scoreboards break your healthbar plugin, well yep! What do you want to do about this?
+2) I thought you had a conquest type plugin to award players town's rewards when they were capturing a flag, or the like?
+3) I don't understand what exactly you're asking for the town guest feature?
